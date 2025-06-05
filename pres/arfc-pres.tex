@@ -27,6 +27,9 @@
 \usepackage{microtype} % if using PDF
 \usepackage{bigints}
 \usepackage{minted}
+\usepackage[table, dvipsnames]{xcolor}
+
+\newcommand{\mathdefault}[1][]{}
 
 \newcommand{\units}[1] {\:\text{#1}}%
 \newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
@@ -103,11 +106,18 @@
 % \subsection{Cat Math}
 % \input{cat_math}
 \section{Pareto Optimality}
-% \section{\Gls{osier}}
+\input{pareto}
+\section{\Gls{osier}}
+\input{osier}
 \section{\Gls{set}}
-\section{Results}
+\input{set-tool}
+\section{\Gls{set} reanalysis}
 \input{results}
-% \section{Coupling \gls{osier} and Cyclus}
+\section{Discussion}
+\input{discussion}
+\section{Coupling \gls{osier} and Cyclus}
+\input{osier-cyclus}
+\section{Conclusion}
 \input{conclusion}
 \input{acks}
 %%--------------------------------%%
