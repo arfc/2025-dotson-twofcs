@@ -1,28 +1,49 @@
+\subsection{Problem Statement}
+\begin{frame}
+  \frametitle{Reanalyzing ``the Study''}
+  \begin{block}{Goals}
+    \begin{enumerate}
+      \item Use \gls{osier} to reevaluate the results from the Fuel Cycle Options study.
+      \item Demonstrate \gls{osier}'s application to a fuel cycles problem.
+    \end{enumerate}
+  \end{block}
+  \begin{block}{Methodology}
+    \begin{enumerate}[<+->]
+      \item Scrape raw data from the study appendices.
+      \item Pass data to \gls{osier}.
+      \item Determine the Pareto optimal evaluation groups.
+      \item Identify solution(s) of interest.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+
+\subsection{Results}
 \begin{frame}
   \frametitle{Pareto Optimal Solutions for the \gls{set}}
   % a comment
         
   \begin{figure}[htbp!]
     \begin{center}
-      \resizebox{0.85\columnwidth}{!}{\input{./figures/full_set_plot.pgf}}
+      \resizebox{0.8\columnwidth}{!}{\input{./figures/full_set_plot.pgf}}
     \end{center}
-          \caption{Kristofer Hivju is pretty serious about this color palette.}
+          \caption{Pareto optimal solutions for the \gls{set}.}
     \label{fig:full-set-pcp}
   \end{figure}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Once-through fuel cycle solutions}
-  % a comment
+% \begin{frame}
+%   \frametitle{Once-through fuel cycle solutions}
+%   % a comment
         
-  \begin{figure}[htbp!]
-    \begin{center}
-      \resizebox{0.85\columnwidth}{!}{\input{./figures/once-through_set_plot.pgf}}
-    \end{center}
-          \caption{Kristofer Hivju is pretty serious about this color palette.}
-    \label{fig:once-through-pcp}
-  \end{figure}
-\end{frame}
+%   \begin{figure}[htbp!]
+%     \begin{center}
+%       \resizebox{0.85\columnwidth}{!}{\input{./figures/once-through_set_plot.pgf}}
+%     \end{center}
+%           \caption{Kristofer Hivju is pretty serious about this color palette.}
+%     \label{fig:once-through-pcp}
+%   \end{figure}
+% \end{frame}
 
 \begin{frame}
   \frametitle{High Tradeoff (``Knee'') Solution}
@@ -30,28 +51,29 @@
         
   \begin{figure}[htbp!]
     \begin{center}
-      \resizebox{0.85\columnwidth}{!}{\input{./figures/single-eg_set_plot.pgf}}
+      \resizebox{0.8\columnwidth}{!}{\input{./figures/single-eg_set_plot.pgf}}
     \end{center}
-          \caption{Kristofer Hivju is pretty serious about this color palette.}
+          \caption{EG04 minimizes tradeoff across all objectives and evaluation groups.}
     \label{fig:single-eg-pcp}
   \end{figure}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Non-Pareto Optimal Evaluation Groups}
-  % a comment
+% \begin{frame}
+%   \frametitle{Non-Pareto Optimal Evaluation Groups}
+%   % a comment
         
-  \begin{figure}[htbp!]
-    \begin{center}
-      \resizebox{0.85\columnwidth}{!}{\input{./figures/non_optimal_set_plot.pgf}}
-    \end{center}
-          \caption{Kristofer Hivju is pretty serious about this color palette.}
-    \label{fig:non-optimal-pcp}
-  \end{figure}
-\end{frame}
+%   \begin{figure}[htbp!]
+%     \begin{center}
+%       \resizebox{0.85\columnwidth}{!}{\input{./figures/non_optimal_set_plot.pgf}}
+%     \end{center}
+%           \caption{Kristofer Hivju is pretty serious about this color palette.}
+%     \label{fig:non-optimal-pcp}
+%   \end{figure}
+% \end{frame}
 
 
 \begin{frame}
+  \frametitle{Summary}
     \begin{table}
         \centering
         \caption{Summary of non-optimal solutions and disagreement. Highlighted rows indicate disagreement between \Gls{osier} and \Gls{set} results.}
@@ -59,3 +81,7 @@
         \resizebox{0.8\columnwidth}{!}{\input{tables/non-optimal-subset.tex}}
     \end{table}
 \end{frame}
+
+% \begin{frame}
+  
+% \end{frame}

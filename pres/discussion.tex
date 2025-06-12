@@ -1,12 +1,20 @@
+\subsection{Explaining the disagreement}
 \begin{frame}
-  \frametitle{\Gls{set} binning example}
-  % a comment
-        
-  \begin{figure}[htbp!]
-    \begin{center}
-      \resizebox{0.65\columnwidth}{!}{\input{./figures/set_bin_plot.pgf}}
-    \end{center}
-          \caption{Binned groups for SNF+HLW activity at 100 years.}
-    \label{fig:set_activity_bins}
-  \end{figure}
+  \frametitle{Sources of disagreement between \gls{osier} and \gls{set}}
+    \begin{columns}
+        \column[t]{3.5cm}
+            \begin{enumerate}
+                \item Data binning is lossy.
+                \item Reliance on expert judgement for metric values and weights.
+            \end{enumerate}
+        \pause        
+        \column[t]{6.5cm}
+          \begin{figure}[htbp!]
+            \begin{center}
+            \resizebox{\columnwidth}{!}{\input{./figures/set_bin_plot.pgf}}
+            \end{center}
+                \caption{Binned groups for SNF+HLW activity at 100 years. Reproduced from \cite{wigeland_nuclear_2014}.}
+            \label{fig:set_activity_bin2}
+        \end{figure}
+    \end{columns}
 \end{frame}
