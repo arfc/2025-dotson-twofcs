@@ -1,14 +1,13 @@
-# elsevier-journal-article-template
-This repository contains a template for journal
-articles published by Elsevier. This template
-repository is largely derived from the github
+# Elsevier Journal Article for Special Issue of Annals of Nuclear Energy
+This was cloned from the template repository in ARFC.
+This repository is largely derived from the github
 repository for the paper "Synergistic Spent Nuclear
 Fuel Dynamics Within the European Union" by Bae et
 al., and initialized from that repository to preserve
 the original git and contribution histories.
 
 # Outline
-The top-level directory should contain all TeX files for
+The pub directory should contain all TeX files for
 the journal article itself.
 
 The `graph-abs` directory holds all files for the
