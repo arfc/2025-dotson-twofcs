@@ -1,37 +1,23 @@
+%%
+%% This is file `elsarticle-num.bst' (Version 2.1),
 %% 
-%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%% Copyright 2007-2025 Elsevier Ltd
 %% 
 %% This file is part of the 'Elsarticle Bundle'.
 %% ---------------------------------------------
 %% 
 %% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.2 of this license or (at your option) any
+%% License, either version 1.3 of this license or (at your option) any
 %% later version.  The latest version of this license is in
 %%    http://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
+%% and version 1.3 or later is part of all distributions of LaTeX
 %% version 1999/12/01 or later.
 %% 
-%% The list of all files belonging to the 'Elsarticle Bundle' is
-%% given in the file `manifest.txt'.
 %% 
-%%% Modification of BibTeX style file elsarticle-num.bst
-%%% ... by urlbst, version 0.6 (marked with "% urlbst")
-%%% See <http://purl.org/nxg/dist/urlbst>
-%%% Added webpage entry type, and url and lastchecked fields.
-%%% Added eprint support.
-%%% Added DOI support.
-%%% Added hyperref support.
-%%% Original headers follow...
-
+%% $Id: elsarticle-num.bst 272 2025-01-09 17:36:26Z rishi $
+%% 
+%% $URL: https://lenova.river-valley.com/svn/elsarticle/trunk/elsarticle-num.bst $
 %%
-%% This is file `elsarticle-num.bst',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% merlin.mbs  (with options: `,seq-no,nm-init,ed-au,dt-end,yr-par,yrp-x,jttl-rm,thtit-a,vnum-sp,volp-blk,jdt-p,pp-last,jnm-x,btit-rm,bt-rm,pub-date,pub-xpar,pre-edn,url,url-nl,edpar,blk-com,in-col,pp,ed,abr,ednx,ord,jabr,and-xcom,xand,em-x,nfss')
-%% After docstrip generation some manual changes were made (SP)
-
 %% ----------------------------------------
 
 ENTRY
@@ -74,7 +60,7 @@ FUNCTION {init.urlbst.variables}
   "Available from: " 'urlintro := % prefix before URL
   "http://arxiv.org/abs/" 'eprinturl := % prefix to make URL from eprint ref
   "arXiv:" 'eprintprefix := % text prefix printed before eprint ref
-  "http://dx.doi.org/" 'doiurl := % prefix to make URL from DOI
+  "https://doi.org/" 'doiurl := % prefix to make URL from DOI
   "doi:" 'doiprefix :=      % text prefix printed before DOI ref
   #1 'addeprints :=         % 0=no eprints; 1=include eprints
   #1 'adddoiresolver :=     % 0=no DOI resolver; 1=include it
@@ -1188,6 +1174,10 @@ FUNCTION {article}
   if$
   format.journal.pages
   format.note output
+  pages empty$  
+	  { format.date "year" output.check }
+    'skip$ 
+  if$
   fin.entry
   write.url
 }
@@ -1229,7 +1219,7 @@ FUNCTION {booklet}
   howpublished output
   address output
   format.note output
-  format.date output
+  format.date "year" output.check
   fin.entry
   write.url
 }
@@ -1347,7 +1337,7 @@ FUNCTION {manual}
   if$
   format.edition output
   format.note output
-  format.date output
+  format.date "year" output.check
   fin.entry
   write.url
 }
@@ -1373,7 +1363,7 @@ FUNCTION {misc}
   format.title output
   howpublished output
   format.note output
-  format.date output
+  format.date "year" output.check
   fin.entry
   write.url
   empty.misc.check
@@ -1446,7 +1436,7 @@ FUNCTION {unpublished}
   title empty$ 'skip$ 'setup.inlinelink if$ % urlbst
   format.title "title" output.check
   format.note "note" output.check
-  format.date output
+  format.date "year" output.check
   fin.entry
   write.url
 }
@@ -1515,3 +1505,5 @@ EXECUTE {end.bib}
 %% End of customized bst file
 %%
 %% End of file `elsarticle-num.bst'.
+
+
