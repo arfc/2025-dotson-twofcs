@@ -1,0 +1,100 @@
+%%  b
+%% This file is based on the template which is  part of the 'Elsarticle Bundle'.
+%% Copyright 2007-2025 Elsevier Ltd
+%% ---------------------------------------------
+%% $Id: elsarticle-template-num.tex 272 2025-01-09 17:36:26Z rishi $
+%%
+\documentclass[review,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+\usepackage{lineno}
+
+%% Optional Packages
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+\makeglossaries
+
+%% Journal
+\journal{Annals of Nuclear Energy}
+
+\begin{document}
+\begin{frontmatter}
+
+%% Title
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+\title{Osier: An open-source energy system framework for multi-objective optimization}
+
+%% authors and addresses
+\input{authors}
+
+
+%% Abstract
+\input{abstract}
+
+%%Graphical abstract
+\input{graph-abs}
+
+%%Research highlights
+\input{highlights}
+
+%% Keywords
+\input{keywords}
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+%% PACS codes here, in the form: \PACS code \sep code
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\end{keyword}
+
+\end{frontmatter}
+
+%% Add \usepackage{lineno} before \begin{document} and uncomment 
+%% following line to enable line numbers
+%% \linenumbers
+
+%% main text
+%%
+
+%% Line numbers for review
+\begin{linenumbers}
+
+\input{introduction}
+\end{linenumbers}
+\input{methods}
+\input{results}
+\input{conclusion}
+\input{acks}
+\input{appendix}
+
+%% If you have bib database file and want bibtex to generate the
+%% bibitems, please use
+%%
+\bibliographystyle{elsarticle-num} 
+\bibliography{bibliography}
+%% TeX file.
+\end{document}
+
+%%
+%% End of file `elsarticle-template-num.tex'.
