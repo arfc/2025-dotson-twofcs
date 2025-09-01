@@ -1,16 +1,129 @@
 \section{Methodology}
 
-Insert information from the methodology chapter of your thesis that introduces 
-the algorithmic choices you made in Osier and, why you chose those methods, and 
-why you didn't choose other methods.
 
-Include also brief introductions to both Temo and the SET tool, as well as an 
-explanation of how you set up the verification of Osier's suitability. 
 
-You do not have to go into incredible detail here. Generally it's ok to just 
-provide enough information for folks to replicate the work and get the same 
-conclusions you did. 
+% Insert information from the methodology chapter of your thesis that introduces
+% the algorithmic choices you made in Osier and, why you chose those methods,
+% and why you didn't choose other methods.
 
-\subsection{Subsection}
-Recommend including key features of the tools and models, input data, and 
-comparison data that are part of the work.
+\gls{osier} applies \gls{moo} to capacity expansion problems by coupling
+\glspl{ga} with an energy dispatch model, formulated as a linear program. We
+chose genetic algorithms over scalarization methods, such as \gls{ec} or
+\gls{ws}, for two reasons. First, scalarization methods are poorly behaved
+around convex regions of a Pareto front because the points are either poorly
+spaced or entirely missed in a convex region \cite{emmerich_tutorial_2018}.
+Second, scalarization methods can only sample points along the Pareto front,
+rather than sampling points in the sub-optimal space. Earlier energy modeling
+research dismissed \gls{moo} for this reason \cite{decarolis_using_2011}.
+\glspl{ga} do not suffer from either of these limitations.
+
+\gls{osier} supports genetic algorithms implemented by the \texttt{Pymoo}
+\cite{blank_pymoo_2020} and \texttt{DEAP} \cite{fortin_deap_2012} Python
+libraries. These two libraries offer a broad suite of \glspl{ga}, however, the
+present study uses the \gls{unsga3} for its superior performance on mono-,
+multi-, and many-objective problems over the similar \gls{nsga2} and \gls{nsga3}
+\cite{seada_unified_2016}. 
+
+This paper demonstrates \gls{osier} by comparing it to two existing modeling
+tools, \gls{temoa} \cite{decarolis_temoa_2010} and \gls{set}
+\cite{wigeland_nuclear_2014-2}. \gls{temoa} is a mature capacity expansion model
+and one of the first \glspl{esom} to implement a method to address structural
+uncertainty, \gls{mga} \cite{decarolis_using_2011,decarolis_modelling_2016}. The
+\gls{set} is an Excel-based application containing metric data from the Nuclear
+Fuel Cycle Evaluation and Screening Study \cite{wigeland_nuclear_2014-2} and an
+objective weighting calculator to help decision makers identify fuel cycles of
+interest based on their priorities and preferences. The \gls{set} evaluates
+representative fuel cycle options, \glspl{eg}, based on a set of nine aggregated
+metrics \cite{wigeland_nuclear_2014}. Table \ref{tab:evaluation-metrics} lists
+these metrics and their sub-criteria.
+
+\begin{table}[htbp!]
+    \centering
+    \caption{Evaluation metrics and evaluation criteria
+    \cite{wigeland_nuclear_2014-2}.}
+    \label{tab:evaluation-metrics}
+    \resizebox{\columnwidth}{!}{\input{tables/metric_categories}}
+\end{table}
+% \FloatBarrier
+
+For the first experiment we developed a test model for both \gls{osier} and
+\gls{temoa} to directly compare their least-cost solutions. \gls{osier} and
+\gls{temoa} optimized the capacity for a single future year with an hourly time
+resolution. We used historical timeseries data from 2019 for the \gls{uiuc},
+which includes electricity demand, solar panel generation, and wind turbine
+power. To facilitate a fair comparison, we recalculated \gls{temoa}'s objective
+function using \gls{osier}'s dispatch model to account for differences in the
+ways the two models calculate costs. \gls{osier}'s total cost objective function
+is given by
+
+\begin{align}
+    \label{eq:dispatch-objective}
+    \mathcal{C} &= \left(\sum_g^G \textbf{CAP}_g \left(C^{cap}_g + C^{fom}_g\right)\right) 
+    + \left(\sum_t^T\sum_g^G \left[C_{g,t}^{fuel} + C_{g,t}^{vom}\right]x_{g,t}
+    \right)
+    \intertext{where,}
+    G &= \text{ the set of all generating technologies},\nonumber\\
+    T &= \text{ the set of all time steps in the model},\nonumber\\
+    \textbf{CAP}_g &= \text{ the capacity of the \textit{g$^{th}$} technology}\quad \left[MW\right],\nonumber\\
+    x_{g,t} &= \text{ the energy produced by generator, \textit{g}, at time, \textit{t}}\quad \left[MWh\right]\nonumber,\\
+    C^{cap}_{g} &= \text{the capital cost of the \textit{g$^{th}$} technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
+    C^{fom}_{g} &= \text{the fixed operating costs of the \textit{g$^{th}$} technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
+    C^{[fuel, vom]}_{g,t} &= \text{the variable operating costs of the \textit{g$^{th}$} technology at time $t$} \quad \left[\frac{\$}{MWh}\right].\nonumber
+\end{align}
+
+We also compared the performance of these tools along a second objective,
+lifecycle \gls{co2} emissions. We generated 25 alternative solutions
+\gls{temoa}'s \gls{mga} algorithm and then passed the resulting decision
+variables to \gls{osier}'s dispatch model to calculate the corresponding
+\gls{co2} emissions. \gls{osier} simply optimized cost and emissions
+simultaneously. \gls{osier}'s emissions objective function is given by
+
+\begin{align}
+    \mathcal{E} &= \sum_g^G \xi_g \sum_t^T x_{g,t},
+    \intertext{where}
+    \xi_g &= \text{the \gls{co2} intensity of the \textit{g$^{th}$} technology}\quad
+    \left[\frac{\text{tons CO$_2$}}{MWh}\right].\nonumber
+\end{align}
+
+The second experiment compares \gls{osier} to the \gls{set}. Since the \gls{set}
+is primarily a decision-support tool, we reexamine its results using Pareto
+optimality and demonstrate a method --- available in \gls{osier} via
+\texttt{Pymoo} and borrowed from \gls{mcda} --- to calculate high-tradeoff
+points. First, we extracted the raw data for each evaluation criteria from the
+Fuel Cycle Options report. We assumed that the nuclear fuel cycles represented
+in the \gls{set} are mutually exclusive. Therefore, we skipped the genetic
+algorithm component of \gls{osier} since the resulant decision space reduces to
+the identity matrix. Then, we determined the Pareto optimality of each \gls{eg}
+and calculated the high-tradeoff point which minimizes
+\cite{rachmawati_multiobjective_2009}
+
+\begin{align}
+    \label{eqn:tradeoff}
+    T\left(X_i, X_j\right) &= \frac{\sum_{1}^{M}\text{max}\left[0, \left(f_m\left(X_j\right) - f_m\left(X_i\right)\right]\right)}
+    {\sum_{1}^{M}\text{max}\left[0, -\left(f_m\left(X_j\right) - f_m\left(X_i\right)\right)\right]},
+    \intertext{where}
+    T &= \text{the tradeoff between the i-th and j-th solutions},\nonumber\\
+    X_i &= \text{the i-th solution vector}, \nonumber\\
+    f_m &= \text{the m-th objective function}, \nonumber\\
+    M &= \text{the total number of objectives}. \nonumber
+\end{align}
+
+Since the design space for this problem is known \textit{a priori}, the results
+from this experiment are simply the non-dominated set of \glspl{eg} which we
+compare to the recommendations from the Nuclear Fuel Cycle Options Study
+\cite{wigeland_nuclear_2014-2}.
+
+% Include also brief introductions to both Temo and the SET tool, as well as an
+% explanation of how you set up the verification of Osier's suitability. 
+
+% You do not have to go into incredible detail here. Generally it's ok to just
+% provide enough information for folks to replicate the work and get the same
+% conclusions you did. 
+
+% \subsection{Description of Test Model}
+
+
+
+
+% Recommend including key features of the tools and models, input data, and
+% comparison data that are part of the work.
