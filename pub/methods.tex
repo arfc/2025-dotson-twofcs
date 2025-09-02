@@ -46,6 +46,9 @@ these metrics and their sub-criteria.
 \end{table}
 % \FloatBarrier
 
+\subsection{Description of the \gls{osier}-\gls{temoa} benchmark}
+\textcolor{red}{I don't love the names of these two subsections...}
+
 For the first experiment we developed a test model for both \gls{osier} and
 \gls{temoa} to directly compare their least-cost solutions. \gls{osier} and
 \gls{temoa} optimized the capacity for a single future year with an hourly time
@@ -64,11 +67,16 @@ is given by
     \intertext{where,}
     G &= \text{ the set of all generating technologies},\nonumber\\
     T &= \text{ the set of all time steps in the model},\nonumber\\
-    \textbf{CAP}_g &= \text{ the capacity of the \textit{g$^{th}$} technology}\quad \left[MW\right],\nonumber\\
-    x_{g,t} &= \text{ the energy produced by generator, \textit{g}, at time, \textit{t}}\quad \left[MWh\right]\nonumber,\\
-    C^{cap}_{g} &= \text{the capital cost of the \textit{g$^{th}$} technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
-    C^{fom}_{g} &= \text{the fixed operating costs of the \textit{g$^{th}$} technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
-    C^{[fuel, vom]}_{g,t} &= \text{the variable operating costs of the \textit{g$^{th}$} technology at time $t$} \quad \left[\frac{\$}{MWh}\right].\nonumber
+    \textbf{CAP}_g &= \text{ the capacity of the \textit{g$^{th}$} 
+    technology}\quad \left[MW\right],\nonumber\\
+    x_{g,t} &= \text{ the energy produced by generator, \textit{g}, 
+    at time, \textit{t}}\quad \left[MWh\right]\nonumber,\\
+    C^{cap}_{g} &= \text{the capital cost of the \textit{g$^{th}$} 
+    technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
+    C^{fom}_{g} &= \text{the fixed operating costs of the \textit{g$^{th}$} 
+    technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
+    C^{[fuel, vom]}_{g,t} &= \text{the variable operating costs of the 
+    \textit{g$^{th}$} technology at time $t$} \quad \left[\frac{\$}{MWh}\right].\nonumber
 \end{align}
 
 We also compared the performance of these tools along a second objective,
@@ -85,22 +93,42 @@ simultaneously. \gls{osier}'s emissions objective function is given by
     \left[\frac{\text{tons CO$_2$}}{MWh}\right].\nonumber
 \end{align}
 
-The second experiment compares \gls{osier} to the \gls{set}. Since the \gls{set}
-is primarily a decision-support tool, we reexamine its results using Pareto
-optimality and demonstrate a method --- available in \gls{osier} via
-\texttt{Pymoo} and borrowed from \gls{mcda} --- to calculate high-tradeoff
-points. First, we extracted the raw data for each evaluation criteria from the
-Fuel Cycle Options report. We assumed that the nuclear fuel cycles represented
-in the \gls{set} are mutually exclusive. Therefore, we skipped the genetic
-algorithm component of \gls{osier} since the resulant decision space reduces to
-the identity matrix. Then, we determined the Pareto optimality of each \gls{eg}
-and calculated the high-tradeoff point which minimizes
+Since \gls{mga} is such an important tool for addressing structural uncertainty
+\cite{yue_review_2018} and since structural uncertainty persists regardless of
+the number of modeled objectives \cite{decarolis_using_2011}, \gls{osier}
+extends the \gls{mga} concept into N-dimensional objective space by implementing
+a novel algorithm that takes advantage of the many solutions that \glspl{ga}
+test before converging. As with traditional \gls{mga}, the first step identifies
+an acceptable slack value that bounds the sub-optimal space (e.g., within 10\%
+of the Pareto front). Since there are guaranteed to be points within the
+sub-optimal region, \gls{osier} skips the step to repeatedly solve the model
+with additional constraints found in traditional \gls{mga} and instead 
+determines which points reside within the designated sub-optimal region. Finally, since
+\gls{mga} seeks maximally different solutions in decision space, \gls{osier}
+uses a corresponding \textit{farthest-first-traversal} method to identify
+maximally different solutions \cite{hochbaum_best_1985}. In addition to comparing
+results between \gls{osier} and \gls{temoa}, we also demonstrate this novel approach
+to \gls{mga}.
+
+\subsection{Description of the \gls{set} reanalysis} The second experiment
+compares \gls{osier} to the \gls{set}. Since the \gls{set} is primarily a
+decision-support tool, we reexamine its results using Pareto optimality and
+demonstrate a method --- available in \gls{osier} via \texttt{Pymoo} and
+borrowed from \gls{mcda} --- to calculate high-tradeoff points. First, we
+extracted the raw data for each evaluation criteria from the Fuel Cycle Options
+report. We assumed that the nuclear fuel cycles represented in the \gls{set} are
+mutually exclusive. Therefore, we skipped the genetic algorithm component of
+\gls{osier} since the resulant decision space reduces to the identity matrix.
+Then, we determined the Pareto optimality of each \gls{eg} and calculated the
+high-tradeoff point which minimizes
 \cite{rachmawati_multiobjective_2009}
 
 \begin{align}
     \label{eqn:tradeoff}
-    T\left(X_i, X_j\right) &= \frac{\sum_{1}^{M}\text{max}\left[0, \left(f_m\left(X_j\right) - f_m\left(X_i\right)\right]\right)}
-    {\sum_{1}^{M}\text{max}\left[0, -\left(f_m\left(X_j\right) - f_m\left(X_i\right)\right)\right]},
+    T\left(X_i, X_j\right) &= \frac{\sum_{1}^{M}\text{max}\left[0, 
+    \left(f_m\left(X_j\right) - f_m\left(X_i\right)\right]\right)}
+    {\sum_{1}^{M}\text{max}\left[0, -\left(f_m\left(X_j\right) - 
+    f_m\left(X_i\right)\right)\right]},
     \intertext{where}
     T &= \text{the tradeoff between the i-th and j-th solutions},\nonumber\\
     X_i &= \text{the i-th solution vector}, \nonumber\\
