@@ -34,8 +34,12 @@ space, which demonstrates that traditional \gls{mga} does not guarantee improved
 results along any other objective axis. 
 
 Figure \ref{fig:osier-near-optimal} zooms in on \gls{osier}'s near-optimal
-space, showing all of the solutions therein in green. Points in red correspond to
-a subset of 25 solutions selected via farthest-first-traversal.
+space, showing all of the solutions therein in green. However, 
+detailed tradeoff analysis among all points in the inferior region is 
+tedious if not intractable. Therefore, we present, in red, a subset of 25 solutions 
+selected via farthest-first-traversal. This strategy guarantees that the selected points
+are maximally-different in decision space, thereby ensuring an efficient sampling of
+the inferior region.
 
 \begin{figure}[ht!]
     \begin{center}
@@ -67,7 +71,33 @@ selected points from \gls{osier}'s near-optimal space. Lastly, Figure
   \label{fig:temoa-benchmark-03}
 \end{figure}
 
+Figure \ref{fig:temoa-benchmark-03}a shows that solutions on the Pareto front
+only use a few of the available technologies. Only three out of the ten technology
+options are present in all Pareto front portfolios: Conventional nuclear, conventional
+natural gas, and four-hour battery storage. In contrast, Figure \ref{fig:temoa-benchmark-03}b 
+introduces two more technology options: ``Advanced'' natural gas (i.e., gas plants 
+with \gls{ccs}) and wind turbines. The distributions for all technologies broadened.
+The \gls{mga} solutions from \gls{temoa} shows that all technologies were used in 
+at least one of the solutions. Together, Figure \ref{fig:temoa-benchmark-03} shows 
+that \gls{moo} can reduce structural uncertainty by modeling other objectives while 
+acknowledging that the inferior region of a Pareto front may hold appealing solutions
+due to unmodeled objectives. Whereas traditional \gls{mga} can identify distinct 
+solutions in decision space, it cannot guarantee that these solutions will be
+measurably better on any other objective.
+
 \subsection{Reanalyzing the \gls{set}}
+
+With data from the \gls{set} we can directly calculate the Pareto optimality of
+each \gls{eg}. Figure \ref{fig:full-set-plot} illustrates the Pareto front 
+for the corresponding many-objective problem with a parallel-coordinate plot\footnote{Each line on
+a parallel-coordinate plot corresponds to a unique \gls{eg}. Although the objective
+axes are on the same visual scale, the data are on different scales.}.
+The \glspl{eg} were highlighted according to their degree of recycling. Once-through
+fuel cycles are in red, limited-recycling fuel cycles are in green, and fuel cycles
+with continuous recycling are in blue.
+Eight of the 40 \glspl{eg} were found to be sub-optimal. For those eight \glspl{eg}, 
+this means that there was another \gls{eg} that performed better on at least one
+other objective.
 
 \begin{figure}[ht!]
     \begin{center}
@@ -78,13 +108,16 @@ selected points from \gls{osier}'s near-optimal space. Lastly, Figure
     \end{center}
 \end{figure}
 
-\begin{figure}[ht!]
-    \begin{center}
-        \resizebox{\columnwidth}{!}{\input{images/once-through_set_plot.pgf}}
-        \caption{}
-        \label{fig:once-through}
-    \end{center}
-\end{figure}
+% \begin{figure}[ht!]
+%     \begin{center}
+%         \resizebox{\columnwidth}{!}{\input{images/once-through_set_plot.pgf}}
+%         \caption{}
+%         \label{fig:once-through}
+%     \end{center}
+% \end{figure}
+
+Using a built-in tool from \texttt{Pymoo}, \gls{osier} identified a ``high-compromise'' 
+\gls{eg} that minimizes the tradeoffs among objectives. Figure \ref{fig:knee-solution}
 
 \begin{figure}[ht!]
     \begin{center}
@@ -93,6 +126,13 @@ selected points from \gls{osier}'s near-optimal space. Lastly, Figure
         \label{fig:knee-solution}
     \end{center}
 \end{figure}
+
+\begin{table}[ht!]
+    \centering
+    \caption{Summary of the disagreement between the \gls{set} and \gls{osier}.}
+    \label{tab:summary-subset}
+    \resizebox{\columnwidth}{!}{\input{tables/non-optimal-subset.tex}}
+\end{table}
 
 % Repeat a combination of figures and paragraphs like this until the key results
 % are communicated. If any discussion is needed to illuminate the interpretation
