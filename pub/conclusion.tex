@@ -1,24 +1,64 @@
 \section{Discussion}
-This is the conclusion section. Depending on the preferences of the journal, it 
-may be called either ``Conclusions'' or ``Discussion''. 
-Your results section should have made clear what was accomplished in the in 
-silico experiments. Here, you want to reflect on what you promised in the 
-introcution and answer the question ``So what?'' or ``Why is this 
-interesting''.
+% This is the conclusion section. Depending on the preferences of the journal, it
+% may be called either ``Conclusions'' or ``Discussion''. Your results section
+% should have made clear what was accomplished in the in silico experiments. Here,
+% you want to reflect on what you promised in the introcution and answer the
+% question ``So what?'' or ``Why is this interesting''.
 
-\begin{itemize}
-        \item With only one or two sentences, summarize the main conclusions of 
-                the paper (not a lengthy rehashing of the results section, but 
-                a clarification on what those results mean for the field). 
-        \item In the Introduction, you motivated the effort with a description 
-                of a gap in the field. Now, make clear whether your results 
-                effectively filled that gap, whether they contradicted earlier 
-                work or complement that work. 
-        \item if there are any limitations in the scope of this paper, take a 
-                sentence or two to state the future work that could be done to 
-                extend it. 
-        \item Include a forward looking statement, perhaps one that predicts 
-                future uses of Osier or future multi-objective models inspired 
-                by this demonstrated capability, and the effect that will have on energy 
-                planning.  
-\end{itemize}
+% \begin{itemize}
+%         % \item With only one or two sentences, summarize the main conclusions of
+%         %         the paper (not a lengthy rehashing of the results section, but a
+%         %         clarification on what those results mean for the field). 
+%         \item 
+%         % \item if there are any limitations in the scope of this paper, take a
+%         %         sentence or two to state the future work that could be done to
+%         %         extend it. 
+%         \item Include a forward looking statement, perhaps one that predicts
+%                 future uses of Osier or future multi-objective models inspired
+%                 by this demonstrated capability, and the effect that will have
+%                 on energy planning.  
+% \end{itemize}
+
+% point 1: summary
+This paper introduces and demonstrates \gls{osier}, a novel \gls{esom} that
+enables multi-objective optimization. First, we verified that \gls{osier} agrees
+well with a mature \gls{esom} for a single objective problem. We also showed
+that conventional \gls{mga} does not lead to measurably better results on
+another objective by using \gls{osier} to optimize cost and carbon emissions
+simultaneously. However, we also acknowledged the persistence of structural
+uncertainty and demonstrated a novel algorithm that extends \gls{mga} into
+N-dimensions. Second, we used \gls{osier} to reevaluate the results from a fuel
+cycle options study through the lens of Pareto optimality --- corresponding to a
+17-objective optimization problem. These results showed disagreement between
+conclusions drawn from the \gls{set} and conclusions based on the Pareto front. 
+
+% point 2: gaps addressed
+\emph{In the Introduction, you motivated the effort with a description
+                of a gap in the field. Now, make clear whether your results
+                effectively filled that gap, whether they contradicted earlier
+                work or complement that work. }
+
+\textcolor{red}{Have I satisfied this point or does it still need clarification?}
+
+% point 3: limitations
+Although we successfully used Pareto optimality to reanalyze the results from 
+a fuel cycle options study, our conclusions from this experiment are somewhat 
+limited. This is because we assumed that the \glspl{eg} were mutually exclusive
+and therefore we knew the design space \textit{a priori}. Further, our design space
+was limited to units of \textit{entire fuel cycles} since we only used the raw 
+performance data for each fuel cycle from the \gls{set}. Future work should 
+extend this study by enabling \gls{osier} to conduct a fuel cycle from cradle to 
+grave to develop a more sophisticated decision space. This may be accomplished
+by adding more physics to \gls{osier} or by coupling \gls{osier} with a known 
+fuel cycle simulator, such as \texttt{Cyclus}.
+
+% point 4: forward
+Despite the tradition of optimizing energy systems based on a singular cost
+objective, real-world decision-making is always a multi-objective problem.
+\gls{osier} allows modelers and decision-makers to analyze tradeoffs for 
+quantifiable objectives and, through N-dimensional \gls{mga}, consider
+alternative solutions for objectives that are not quantifiable. By opening
+the decision-making black box through explicit optimization on multiple objectives,
+members of the public and other stakeholders may participate more effectively 
+in the process of decision-making. Thereby democratizing our energy systems and improving
+the justice and equity outcomes related to the ways we produce energy.
