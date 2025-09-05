@@ -1,69 +1,65 @@
 \section{Introduction}
 
-%% General Background
-% The general background should demarcate the overall scientific setting of 
-% your work. Start with a general topic that everyone in your audience cares 
-% about. Note that the general background should give your audience a sense of 
-% what to expect from your paper, not an overview of the history of a field. 
-% Introduce only necessary background that is related to your work, and make 
-% sure it can narrow down to your thesis.
+%% General Background The general background should demarcate the overall
+% scientific setting of your work. Start with a general topic that everyone in
+% your audience cares about. Note that the general background should give your
+% audience a sense of what to expect from your paper, not an overview of the
+% history of a field. Introduce only necessary background that is related to
+% your work, and make sure it can narrow down to your thesis.
 
-%% Specific background: Work done so far
-% Give your reader a sense of previous accomplishments, current contradictions, 
-% and competing theories in the field. Cite previous work that illustrates your 
-% narrative and gives a balanced description of the scientific landscape on 
-% this research topic.  
+%% Specific background: Work done so far Give your reader a sense of previous
+% accomplishments, current contradictions, and competing theories in the field.
+% Cite previous work that illustrates your narrative and gives a balanced
+% description of the scientific landscape on this research topic.  
 
-%%  Knowledge gap: Motivation for your work Give 
-% evidence of the incompleteness of the current understanding and of the value 
-% of investigating the field further. What is the gap that needs to be filled? 
-% Demonstrate the importance of this unsolved problem as the motivation for 
-% your work.  2
+%%  Knowledge gap: Motivation for your work Give evidence of the incompleteness
+% of the current understanding and of the value of investigating the field
+% further. What is the gap that needs to be filled? Demonstrate the importance
+% of this unsolved problem as the motivation for your work.  2
 
-%% Aim of your paper Finally, clearly state the aim and scope 
-% of this article (not the project) and what exact question is answered. You 
-% may also briefly explain how the study was conducted, and share a preview of 
-% your findings.
+%% Aim of your paper Finally, clearly state the aim and scope of this article
+% (not the project) and what exact question is answered. You may also briefly
+% explain how the study was conducted, and share a preview of your findings.
 
-Preventing the worst impacts of climate change will require our globalized society to transition from
-fossil fuel infrastructure to clean energy infrastructure. This transition must
-also be done equitably and justly to prevent entrenching further injustices to
-marginalized and vulnerable communities. An economy-wide transition presents a
-challenge unto itself due to the spatial, temporal, and topological complexities
-of energy systems. \glspl{esom} are a class of
-tools designed to optimize this transition used by energy planners and
-decision-makers to generate insights that inform policy. However, \glspl{esom} 
-are challenged by real-world 
-optimization challenges, which require simultaneous consideration of multiple 
-competing objectives.
+Preventing the worst impacts of climate change will require our globalized
+society to transition from fossil fuel infrastructure to clean energy
+infrastructure. This transition must also be done equitably and justly to
+prevent entrenching further injustices to marginalized and vulnerable
+communities. An economy-wide transition presents a challenge unto itself due to
+the spatial, temporal, and topological complexities of energy systems.
+\glspl{esom} are a class of tools designed to optimize this transition used by
+energy planners and decision-makers to generate insights that inform policy.
+However, \glspl{esom} are challenged by real-world optimization challenges,
+which require simultaneous consideration of multiple competing objectives.
 
-Current \glspl{esom} exclusively optimize on cost, yet real world decisions are 
-also informed by non-financial priorities, such as sustainability and social 
-benefits. Since these objectives cannot be neatly captured by a cost metric, 
-ESOMs fail to optimize for these goals.  Rather than returning a single optimal 
-solution, multi-objective optimization generates a set of co-optimal solutions 
-called a \textit{Pareto front}, where no objective can be improved without 
-making another objective worse. The existence of a Pareto front evinces 
-tradeoffs which can only be resolved through dialogue in a participatory 
+Current \glspl{esom} exclusively optimize on cost, yet real world decisions are
+also informed by non-financial priorities, such as sustainability and social
+benefits. Since these objectives cannot be neatly captured by a cost metric,
+ESOMs fail to optimize for these goals.  Rather than returning a single optimal
+solution, multi-objective optimization generates a set of co-optimal solutions
+called a \textit{Pareto front}, where no objective can be improved without
+making another objective worse. The existence of a Pareto front evinces
+tradeoffs which can only be resolved through dialogue in a participatory
 process. 
 
-A new first multi-objective energy system optimization framework, \texttt{Osier}
-allows users to 
-optimize arbitrarily many objectives and define new objectives to create a 
-bespoke, contextualized, model. Since some structural 
-uncertainty will persist regardless of the number of objectives, 
-\texttt{Osier} leverages genetic algorithms for their ability to sample complex 
-Pareto fronts and because their search methods automatically sample sub-optimal 
-space. Further, \texttt{Osier} leverages a novel algorithm to calculate a subset of 
-maximally different solutions within the sub-optimal space to address this 
-uncertainty related to unmodeled objectives. By producing multiple solutions, 
-\texttt{Osier} gives modelers and decision-makers the tools to meaningfully 
-engage with public stakeholders and learn their preferences, thereby attending 
-to issues of procedural and recognition justice.
+A new multi-objective energy system optimization framework, \gls{osier} allows
+users to optimize arbitrarily many objectives and define new objectives to
+create a bespoke, contextualized, model. Since some structural uncertainty will
+persist regardless of the number of objectives, \texttt{Osier} leverages genetic
+algorithms for their ability to sample complex Pareto fronts and because their
+search methods automatically sample sub-optimal space. Further, \texttt{Osier}
+leverages a novel algorithm to calculate a subset of maximally different
+solutions within the sub-optimal space to address this uncertainty related to
+unmodeled objectives. By producing multiple solutions, \texttt{Osier} gives
+modelers and decision-makers the tools to meaningfully engage with public
+stakeholders and learn their preferences, thereby attending to issues of
+procedural and recognition justice.
 
-This work verifies \texttt{Osier}'s suitability for energy modeling problems with two \textit{in silico} experiments. The first set of experiments
-compare \texttt{Osier} to a more mature energy system optimization model, \texttt{Temoa}, to verify
-that \texttt{Osier} produces results consistent with known methods. The results
-for a least-cost optimization with \texttt{Osier} and \texttt{Temoa} show
-strong agreement, with 0.5\% of each other. In the second set, \texttt{Osier}
-reanalyzes a set of nuclear fuel cycle options through the lens of Pareto optimality.
+This work verifies \texttt{Osier}'s suitability for energy modeling problems
+with two \textit{in silico} experiments. The first set of experiments compare
+\texttt{Osier} to a more mature energy system optimization model,
+\texttt{Temoa}, to verify that \texttt{Osier} produces results consistent with
+known methods. The results for a least-cost optimization with \texttt{Osier} and
+\texttt{Temoa} show strong agreement, with 0.5\% of each other. In the second
+set, \texttt{Osier} reanalyzes a set of nuclear fuel cycle options through the
+lens of Pareto optimality.
