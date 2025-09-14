@@ -42,14 +42,14 @@ these metrics and their sub-criteria.
     \caption{Evaluation metrics and evaluation criteria
     \cite{wigeland_nuclear_2014-2}.}
     \label{tab:evaluation-metrics}
-    \resizebox{\columnwidth}{!}{\input{tables/metric_categories}}
+    \resizebox{0.95\columnwidth}{!}{\input{tables/metric_categories}}
 \end{table}
 % \FloatBarrier
 
-\subsection{Description of the \gls{osier}-\gls{temoa} benchmark}
-\textcolor{red}{I don't love the names of these two subsections...}
-\textcolor{blue}{How about ``Test I: Validating Dispatch Optimization'' and 
-``Test II: Evaluating the Nuclear Fuel Cycle''}
+\subsection{Experiment I: Validating Capacity Expansion Optimization}
+% \textcolor{red}{I don't love the names of these two subsections...}
+% \textcolor{blue}{How about ``Test I: Validating Dispatch Optimization'' and
+% ``Test II: Evaluating the Nuclear Fuel Cycle''}
 
 For the first experiment, we developed a test model for both \gls{osier} and
 \gls{temoa} to directly compare their least-cost solutions. \gls{osier} and
@@ -104,25 +104,26 @@ test before converging. As with traditional \gls{mga}, the first step identifies
 an acceptable slack value that bounds the sub-optimal space (e.g., within 10\%
 of the Pareto front). Since there are guaranteed to be points within the
 sub-optimal region, \gls{osier} skips the step to repeatedly solve the model
-with additional constraints found in traditional \gls{mga} and instead 
-determines which points reside within the designated sub-optimal region. Finally, since
-\gls{mga} seeks maximally different solutions in decision space, \gls{osier}
-uses a corresponding \textit{farthest-first-traversal} method to identify
-maximally different solutions \cite{hochbaum_best_1985}. In addition to comparing
-results between \gls{osier} and \gls{temoa}, we also demonstrate this novel approach
-to \gls{mga}.
+with additional constraints found in traditional \gls{mga} and instead
+determines which points reside within the designated sub-optimal region.
+Finally, since \gls{mga} seeks maximally different solutions in decision space,
+\gls{osier} uses a corresponding \textit{farthest-first-traversal} method to
+identify maximally different solutions \cite{hochbaum_best_1985}. In addition to
+comparing results between \gls{osier} and \gls{temoa}, we also demonstrate this
+novel approach to \gls{mga}.
 
-\subsection{Description of the \gls{set} reanalysis} The second experiment
-compares \gls{osier} to the \gls{set}. Since the \gls{set} is primarily a
-decision-support tool, we reexamine its results using Pareto optimality and
-demonstrate a method --- available in \gls{osier} via \texttt{Pymoo} and
-borrowed from \gls{mcda} --- to calculate high-tradeoff points. First, we
-extracted the raw data for each evaluation criteria from the Fuel Cycle Options
-report. We assumed that the nuclear fuel cycles represented in the \gls{set} are
-mutually exclusive. Therefore, we skipped the genetic algorithm component of
-\gls{osier} since the resulant decision space reduces to the identity matrix.
-Then, we determined the Pareto optimality of each \gls{eg} and calculated the
-high-tradeoff point which minimizes
+\subsection{Experiment II: Evaluating the Nuclear Fuel Cycle} 
+
+The second experiment compares \gls{osier} to the \gls{set}. Since the \gls{set}
+is primarily a decision-support tool, we reexamine its results using Pareto
+optimality and demonstrate a method --- available in \gls{osier} via
+\texttt{Pymoo} and borrowed from \gls{mcda} --- to calculate high-tradeoff
+points. First, we extracted the raw data for each evaluation criteria from the
+Fuel Cycle Options report. We assumed that the nuclear fuel cycles represented
+in the \gls{set} are mutually exclusive. Therefore, we skipped the genetic
+algorithm component of \gls{osier} since the resulant decision space reduces to
+the identity matrix. Then, we determined the Pareto optimality of each \gls{eg}
+and calculated the high-tradeoff point which minimizes
 \cite{rachmawati_multiobjective_2009}
 
 \begin{align}

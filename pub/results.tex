@@ -28,10 +28,11 @@ single-objective optimization at the level of detail common in existing
 \end{figure}
 
 The red-shaded area shows the sub-optimal space sampled with \gls{temoa}'s
-\gls{mga} algorithm, while the gray area shows \gls{osier}'s sub-optimal space.
-None of \gls{temoa}'s \gls{mga} solutions overlap with \gls{osier}'s sub-optimal
-space, which demonstrates that traditional \gls{mga} does not guarantee improved
-results along any other objective axis. 
+\gls{mga} algorithm, while the gray area shows \gls{osier}'s sub-optimal space,
+which is within 10\% of the Pareto front. None of \gls{temoa}'s \gls{mga}
+solutions overlap with \gls{osier}'s sub-optimal space, which demonstrates that
+traditional \gls{mga} does not guarantee improved results along any other
+objective axis. 
 
 Figure \ref{fig:osier-near-optimal} zooms in on \gls{osier}'s near-optimal
 space, showing all of the solutions therein in green. However, detailed tradeoff
@@ -93,7 +94,7 @@ each \gls{eg}. Figure \ref{fig:full-set-plot} illustrates the Pareto front for
 the corresponding many-objective problem with a parallel-coordinate
 plot\footnote{Each line on a parallel-coordinate plot corresponds to a unique
 \gls{eg}. Although the objective axes are on the same visual scale, the data are
-on different scales.}. The \glspl{eg} were highlighted according to their degree
+on different scales.}. The \glspl{eg} are highlighted according to their degree
 of recycling. Once-through fuel cycles are in red, limited-recycling fuel cycles
 are in green, and fuel cycles with continuous recycling are in blue. Eight of
 the 40 \glspl{eg} from the \gls{set} were found to be sub-optimal. For those
@@ -120,46 +121,46 @@ minimizes Equation \ref{eqn:tradeoff}.
 \begin{figure}[ht!]
     \begin{center}
         \resizebox{\columnwidth}{!}{\input{images/single-eg_set_plot.pgf}}
-        \caption{}
+        \caption{Parallel-coordinate plot of \glspl{eg}, highlighting 
+        the high-compromise solution, EG04, in red.}
         \label{fig:knee-solution}
     \end{center}
 \end{figure}
 
-Table \ref{tab:summary-subset} summarizes the sub-optimal \glspl{eg}
-and highlights the rows where \gls{osier} and the \gls{set} disagree.
-The row highlighted in \textcolor{red}{color} corresponds to the ``high-compromise''
-solution shown in Figure \ref{fig:knee-solution}. Although the Fuel Cycle Options campaign
-discussed it as a ``less promising'' option, and it is Pareto optimal, we identified this
-as a point of disagreement because its status as a ``high-compromise'' solution 
-should elevate its consideration.
+Table \ref{tab:summary-subset} summarizes the sub-optimal \glspl{eg} and
+highlights the rows where \gls{osier} and the \gls{set} disagree. The row
+highlighted in \textcolor{black}{blue} corresponds to the ``high-compromise''
+solution shown in Figure \ref{fig:knee-solution}. Although the Fuel Cycle
+Options campaign discussed it as a ``less promising'' option, and it is Pareto
+optimal, we identified this as a point of disagreement because its status as a
+``high-compromise'' solution should elevate its consideration.
 
 \begin{table}[ht!]
     \centering
-    \caption{Summary of the disagreement between the \gls{set} and 
-        \gls{osier}.}
+    \caption{Summary of the disagreement between the \gls{set} and \gls{osier}.}
     \label{tab:summary-subset}
     \resizebox{\columnwidth}{!}{\input{tables/non-optimal-subset.tex}}
 \end{table}
 
 The rows highlighted in yellow correspond to \glspl{eg} ranked as ``potentially
-promsing'' by the Fuel Cycle Options Campaign, the second highest tier, and which
-\gls{osier} found to be sub-optimal. All three of these \glspl{eg} correspond to 
-a fuel cycle with an \gls{ads}. That they are not Pareto optimal means there are 
-other \glspl{eg} that perform better on at least one objective. It also suggests 
-the presence of an unmodeled objective that was not considered in the Fuel Cycle
-Options study. Finally, the Fuel Cycle Options campaign truncated 21 \glspl{eg},
-which we interpreted as ``not promising.'' However, we found 17 of these ``not promising''
-fuel cycles to be Pareto optimal.
+promsing'' by the Fuel Cycle Options Campaign, the second highest tier, and
+which \gls{osier} found to be sub-optimal. All three of these \glspl{eg}
+correspond to a fuel cycle with an \gls{ads}. That they are not Pareto optimal
+means there are other \glspl{eg} that perform better on at least one objective.
+It also suggests the presence of an unmodeled objective that was not considered
+in the Fuel Cycle Options study. Finally, the Fuel Cycle Options campaign
+truncated 21 \glspl{eg}, which we interpreted as ``not promising.'' However, we
+found 17 of these ``not promising'' fuel cycles to be Pareto optimal.
 
-\textcolor{red}{Does this explanation belong in the discussion section?}
-\textcolor{blue}{I think it's fine here.}
-The disagreement between the \gls{set} and \gls{osier} comes from two places. First,
-the data for each criterion were binned according to some threshold values, which discretized
-the performance data such that all \glspl{eg} within a bin had the same performance.
-Second, 
-the \gls{set} based its recommendations on the binned ``metrics,'' described by the 
-``Metric'' column in Table \ref{tab:evaluation-metrics}, while we used the unbinned
-data for each individual ``criteria.'' These binning steps reduced the data resolution which
+% \textcolor{red}{Does this explanation belong in the discussion section?}
+% \textcolor{blue}{I think it's fine here.}
+The disagreement between the \gls{set} and \gls{osier} comes from two places.
+First, the data for each criterion were binned according to some threshold
+values, which discretized the performance data such that all \glspl{eg} within a
+bin had the same performance. Second, the \gls{set} based its recommendations on
+the binned ``metrics,'' described by the ``Metric'' column in Table
+\ref{tab:evaluation-metrics}, while we used the unbinned data for each
+individual ``criteria.'' These binning steps reduced the data resolution which
 could account for the differences between the \gls{set} and \gls{osier}.
 
 % Repeat a combination of figures and paragraphs like this until the key results
