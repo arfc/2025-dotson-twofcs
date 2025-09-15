@@ -1,12 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Plain Cover Letter
-% LaTeX Template
+% Plain Cover Letter LaTeX Template
 %
-% This template has been downloaded from:
-% http://www.latextemplates.com
+% This template has been downloaded from: http://www.latextemplates.com
 %
-% Original author:
-% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+% Original author: Rensselaer Polytechnic Institute
+% (http://www.rpi.edu/dept/arc/training/latex/resumes/)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14,14 +12,17 @@
 %       PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt]{letter} % Default font size of the document, change to 10pt to fit more text
+\documentclass[11pt]{letter} % Default font size of the document, change to 10pt
+% to fit more text
 \usepackage{graphicx}
-%\usepackage{newcent} % Default font is the New Century Schoolbook PostScript font
-%\usepackage{helvet} % Uncomment this (while commenting the above line) to use the Helvetica font
+%\usepackage{newcent} % Default font is the New Century Schoolbook PostScript
+%font \usepackage{helvet} % Uncomment this (while commenting the above line) to
+%use the Helvetica font
 
 % Margins
 \usepackage[left=1.25in,right=1.25in,top=1in,bottom=0.5in]{geometry}
-%\let\raggedleft\raggedright % Pushes the date (at the top) to the left, comment this line to have the date on the right
+%\let\raggedleft\raggedright % Pushes the date (at the top) to the left, comment
+%this line to have the date on the right
 
 \usepackage{eso-pic,graphicx}
  \begin{document}
@@ -31,18 +32,17 @@
 %       ADDRESSEE SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{letter}{Professor Yousry Azmy\\
-Professor Malcolm Joyce\\
-Professor Guanghui Su\\
-Editors, Progress in Nuclear Energy}
+\begin{letter}
+{Editors, Annals of Nuclear Energy\\
+Special Issue: TWoFCS 2025}
 
 %----------------------------------------------------------------------------------------
 %       YOUR NAME & ADDRESS SECTION
 %----------------------------------------------------------------------------------------
 
-\address{Kathryn D. Huff\\
-kdhuff@illinois.edu\\
-111B Talbot Laboratory\\
+\address{Samuel G. Dotson\\
+sgd2@illinois.edu\\
+216 Talbot Laboratory\\
 104 S. Wright Street\\
 Urbana, IL 61801}
 
@@ -53,26 +53,28 @@ Urbana, IL 61801}
 
 \opening{Dear Editors,}
 
-Please find enclosed a revision of the manuscript entitled: ``\textbf{title}'' 
-        which I and my coauthors, \texbf{authors} are resubmitting for 
-        exclusive consideration for publication as a research 
-article in Annals of Nuclear Energy. The review comments have improved the 
-paper.
+Please find enclosed a revision of the manuscript entitled:
+``\textit{Demonstrating the Osier framework for energy system and nuclear fuel
+cycle optimization}'' which I and my coauthors, \textcolor{black}{Madicken Munk and
+Kathryn D. Huff}, are submitting for exclusive consideration for publication
+as a research article for the 2025 TWoFCS Special Issue in the Annals of Nuclear Energy.
 
-        This manuscript describes \textbf{summary}
+This manuscript introduces the multi-objective optimization framework, \texttt{Osier},
+and demonstrates how this tool may be used for analyzing nuclear fuel cycle options.
+It also shows that \texttt{Osier} produces results consistent with more mature modeling
+tools.
 
 Thank you for your consideration of this work. I expect it will be of interest
 to a broad readership concerned with the nuclear fuel cycle, advanced reactors,
-energy system optimization, and applications of genetic algorithms in nuclear 
-        engineering.
-        Please address correspondence concerning
-this manuscript to me at the University of Illinois.
+energy system optimization, and applications of genetic algorithms in nuclear
+engineering. Please address correspondence concerning this manuscript to me at
+the University of Illinois.
 
 \closing{Sincere regards,
-\includegraphics[height=2cm]{signature}\\
-\fromsig{Kathryn Huff\\Assistant Professor\\Nuclear, Plasma, \& Radiological 
-Eng.\\University of Illinois\\kdhuff@illinois.edu}
-}
+
+% \includegraphics[height=2cm]{signature}\\
+\fromsig{Samuel G. Dotson\\Nuclear, Plasma, \& Radiological Eng.\\University of
+Illinois\\sgd2@illinois.edu} }
 
 %----------------------------------------------------------------------------------------
 
