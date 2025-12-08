@@ -10,19 +10,17 @@
 % ---------------------------------------------
 %
 % It may be distributed under the conditions of the LaTeX Project Public
-% License, either version 1.2 of this license or (at your option) any
-% later version.  The latest version of this license is in
-%    http://www.latex-project.org/lppl.txt
-% and version 1.2 or later is part of all distributions of LaTeX
-% version 1999/12/01 or later.
+% License, either version 1.2 of this license or (at your option) any later
+% version.  The latest version of this license is in
+% http://www.latex-project.org/lppl.txt and version 1.2 or later is part of all
+% distributions of LaTeX version 1999/12/01 or later.
 %
-% The list of all files belonging to the 'Elsarticle Bundle' is
-% given in the file `manifest.txt'.
+% The list of all files belonging to the 'Elsarticle Bundle' is given in the
+% file `manifest.txt'.
 %
 
-% Template article for Elsevier's document class `elsarticle'
-% with numbered style bibliographic references
-% SP 2008/03/01
+% Template article for Elsevier's document class `elsarticle' with numbered
+% style bibliographic references SP 2008/03/01
 %
 %
 %
@@ -34,53 +32,45 @@
 
 % \documentclass[preprint,review,12pt]{elsarticle}
 
-% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
-% for a journal layout:
-% \documentclass[final,1p,times]{elsarticle}
+% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn for a
+% journal layout: \documentclass[final,1p,times]{elsarticle}
 % \documentclass[final,1p,times,twocolumn]{elsarticle}
 % \documentclass[final,3p,times]{elsarticle}
 % \documentclass[final,3p,times,twocolumn]{elsarticle}
 % \documentclass[final,5p,times]{elsarticle}
 % \documentclass[final,5p,times,twocolumn]{elsarticle}
 
-% if you use PostScript figures in your article
-% use the graphics package for simple commands
-% \usepackage{graphics}
-% or use the graphicx package for more complicated commands
+% if you use PostScript figures in your article use the graphics package for
+% simple commands \usepackage{graphics} or use the graphicx package for more
+% complicated commands
 \usepackage{graphicx}
 % or use the epsfig package if you prefer to use the old commands
 % \usepackage{epsfig}
 
 % The amssymb package provides various useful mathematical symbols
 \usepackage{amssymb}
-% The amsthm package provides extended theorem environments
-% \usepackage{amsthm}
+% The amsthm package provides extended theorem environments \usepackage{amsthm}
 \usepackage{amsmath}
 
 % The lineno packages adds line numbers. Start line numbering with
-% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
-% for the whole article with \linenumbers after \end{frontmatter}.
+% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on for the
+% whole article with \linenumbers after \end{frontmatter}.
 \usepackage{lineno}
 
 % I like to be in control
 \usepackage{placeins}
 
-% natbib.sty is loaded by default. However, natbib options can be
-% provided with \biboptions{...} command. Following options are
-% valid:
+% natbib.sty is loaded by default. However, natbib options can be provided with
+% \biboptions{...} command. Following options are valid:
 
-%   round  -  round parentheses are used (default)
-%   square -  square brackets are used   [option]
-%   curly  -  curly braces are used      {option}
-%   angle  -  angle brackets are used    <option>
-%   semicolon  -  multiple citations separated by semi-colon
-%   colon  - same as semicolon, an earlier confusion
-%   comma  -  separated by comma
-%   numbers-  selects numerical citations
-%   super  -  numerical citations as superscripts
-%   sort   -  sorts multiple citations according to order in ref. list
-%   sort&compress   -  like sort, but also compresses numerical citations
-%   compress - compresses without sorting
+%   round  -  round parentheses are used (default) square -  square brackets are
+%   used   [option] curly  -  curly braces are used      {option} angle  -
+%   angle brackets are used    <option> semicolon  -  multiple citations
+%   separated by semi-colon colon  - same as semicolon, an earlier confusion
+%   comma  -  separated by comma numbers-  selects numerical citations super  -
+%   numerical citations as superscripts sort   -  sorts multiple citations
+%   according to order in ref. list sort&compress   -  like sort, but also
+%   compresses numerical citations compress - compresses without sorting
 %
 % \biboptions{comma,round}
 
@@ -107,40 +97,32 @@
 
 % Title, authors and addresses
 
-% use the tnoteref command within \title for footnotes;
-% use the tnotetext command for the associated footnote;
-% use the fnref command within \author or \address for footnotes;
-% use the fntext command for the associated footnote;
-% use the corref command within \author for corresponding author footnotes;
-% use the cortext command for the associated footnote;
-% use the ead command for the email address,
-% and the form \ead[url] for the home page:
+% use the tnoteref command within \title for footnotes; use the tnotetext
+% command for the associated footnote; use the fnref command within \author or
+% \address for footnotes; use the fntext command for the associated footnote;
+% use the corref command within \author for corresponding author footnotes; use
+% the cortext command for the associated footnote; use the ead command for the
+% email address, and the form \ead[url] for the home page:
 %
-% \title{Title\tnoteref{label1}}
-% \tnotetext[label1]{}
-% \author{Name\corref{cor1}\fnref{label2}}
-% \ead{email address}
-% \ead[url]{home page}
-% \fntext[label2]{}
-% \cortext[cor1]{}
-% \address{Address\fnref{label3}}
+% \title{Title\tnoteref{label1}} \tnotetext[label1]{}
+% \author{Name\corref{cor1}\fnref{label2}} \ead{email address} \ead[url]{home
+% page} \fntext[label2]{} \cortext[cor1]{} \address{Address\fnref{label3}}
 % \fntext[label3]{}
 
-\title{A Simple, Concise Article Title\\
+\title{Demonstrating the Osier framework for energy system and nuclear fuel
+cycle optimization\\
         \large Response to Review Comments}
-\author{Firstname M. Lastname, John S. Doe, Jane S. Doe}
+\author{Samuel G. Dotson, Madicken Munk, Kathryn D. Huff}
 
 % use optional labels to link authors explicitly to addresses:
-% \author[label1,label2]{<author name>}
-% \address[label1]{<address>}
+% \author[label1,label2]{<author name>} \address[label1]{<address>}
 % \address[label2]{<address>}
 
 
-%\author[uiuc]{Kathryn Huff}
-%        \ead{kdhuff@illinois.edu}
-%  \address[uiuc]{Department of Nuclear, Plasma, and Radiological Engineering,
-%        118 Talbot Laboratory, MC 234, Universicy of Illinois at
-%        Urbana-Champaign, Urbana, IL 61801}
+%\author[uiuc]{Kathryn Huff} \ead{kdhuff@illinois.edu} \address[uiuc]{Department
+%        of Nuclear, Plasma, and Radiological Engineering, 118 Talbot
+%        Laboratory, MC 234, Universicy of Illinois at Urbana-Champaign, Urbana,
+%        IL 61801}
 %
 % \end{frontmatter}
 \maketitle
@@ -151,6 +133,182 @@ paper.
 
 
 \section*{Reviewer 1}
+\begin{questions}
+
+        \question Page 2, line 7: Beginning of sentence is not capitalized.
+        \begin{solution}
+                Thank you for identifying this error. I have corrected the
+                mistake by invoking the \texttt{\textbackslash Glspl} command
+                rather than the \texttt{\textbackslash glspl}. The new sentence
+                begins on page 2, line 8.
+        \end{solution}
+        \question Page 3, line 22: Should you have the citation with Osier the
+        first time you mention it? And somewhere around this paragraph may be a
+        good place to put the graphical abstract.
+        \begin{solution}
+                Yes, the citation for Osier belongs in the body of the text
+                rather than just in the graphical abstract! I added the citation
+                on page 3, line 24.
+        \end{solution}
+        \question Page 3, line 35: Are you doing two experiments, or two sets of
+        experiments? You seem to say both in this line.
+        \begin{solution}
+                You are correct. I harmonized the language by referring only to
+                a single experiment on page 3, line 35.
+        \end{solution}
+        \question Page 3, line 36: Do you have a citation for Temoa?
+        \begin{solution}
+                Absolutely, thank you for catching this omission. I added the
+                citation on page 3, line 36.
+        \end{solution}
+        \question Page 3, lines 37-39: Do you mean to provide some results in
+        your introduction?
+        \begin{solution}
+                No, the line has been removed.
+        \end{solution}
+        \question Page 4, lines 48-51: It's not clear to me the benefit in the
+        sub-optimal sampling.
+        \begin{solution}
+                Thank you for identifying a possible point of confusion. I added
+                a sentence on page 4, lines 49-53 that elaborates on the
+                usefulness of sampling a model's sub-optimal space.
+        \end{solution}
+        \question Page 4, line 61: The Evaluation and Screening Study is more
+        commonly referred to as the E\&S. I recommend making this change to be
+        more consistent with existing literature and make things more obvious to
+        your readers. I understand that the SET Tool is correctly named here,
+        referring to the excel sheet. But when referring to the study, calling
+        it the E\&S will be commonly recognized.
+        \begin{solution}
+                Thank you for the suggestion. I consolidated references to the
+                Study and the Fuel Cycle Options campaign to ``E\&S'' for
+                consistency with existing literature. Starting on page 5, line
+                68.
+        \end{solution}
+        \question Page 7: CAP: is this thermal or electric capacity?
+        \begin{solution}
+                In theory, Osier could accommodate either. However, in this case
+                I am referring to the \textit{electric} capacity. I modified the
+                text to clarify.
+        \end{solution}
+        \question Page 7: fom/vom in the variable definitions: Are these
+        fixed/variable operation \& maintenance costs? You only say operation --
+        the m may be confusing if people aren't thinking while they read.
+        \begin{solution}
+                The omission was intentional but confusing. I replaced
+                ``operation'' with ``O\&M'' to keep the definition short.
+        \end{solution}
+        \question Page 7, line 81: I feel like you're missing a word, "We
+        generated 15 alternative solutions [with] Temoa's MGA"?
+        \begin{solution}
+                Thank you for catching this! I added the missing word on page 7,
+                line 85.
+        \end{solution}
+        \question Page 7, lines 86-87: I'm not sure the expected reader for this
+        article (someone interested in fuel cycle modeling) would be familiar
+        with what you mean by "structural uncertainty". I recommend adding more
+        about this, since it's clearly important.
+        \begin{solution}
+                I agree that this may be confusing since this version of the
+                paper had not really defined ``structural uncertainty at this
+                point.'' I believe I resolved this by defining the term as part
+                of my response to item 6 (page 4, lines 49-53).
+        \end{solution}
+        \question Page 8, line 106: What do you mean by the Fuel Cycle Options
+        report? Are you referring to one of the appendices in the E\&S? Or the
+        Fuel Cycle Options Catalog?
+        \begin{solution}
+                Yes, please see my response to item 7.
+        \end{solution}
+        \question Page 8, line 107: Can you talk more about what you mean by
+        mutually exclusive? And why that means you can skip the GA part of
+        Osier?
+        \begin{solution}
+                I agree that this deserves further clarification. I added
+                another sentence on page 8, line 111 elaborating on ``mutual
+                exclusivity.''
+        \end{solution}
+        \question Page 9, line 114: When you mention the Nuclear Fuel Cycle
+        Options Study, is this still the E\&S? You have the same citation as the
+        E\&S, so I'm not sure why you're using a different name.
+        \begin{solution}
+               Yes, please see my response to item 7.
+        \end{solution}
+        \question Page 9, line 124: What exactly defines the sub-optimal space
+        from each code? I would think sub-optimal would be anything above and to
+        the right of your Pareto front in Figure 2, but you've only highlighted
+        a section of that space of the graph. Also, you have this space labeled
+        as "near-optimal" in Figure 2, so I recommend reconciling your language.
+        \begin{solution}
+                Thank you, I agree that the language could be more precise! You
+                are correct about the sub-optimal space. The near-optimal space
+                is decided when a user defines the slack variable (which is
+                necessarily a subset of the sub-optimal/feasible space.) I
+                changed relevant instances of ``sub-optimal'' to
+                ``near-optimal'' on page 9, lines 129-130.
+        \end{solution}
+        \question Page 10, Figure 2: It's a little hard to read the x- and
+        y-scales of the zoomed in portion because of the data points. Is there a
+        way to make that more readable?
+        \begin{solution}
+                I changed the color of the tested points from black to gray in
+                figure 2. I also changed the random seed (which selects a subset
+                of all tested points for illustration purposes) which reduced
+                the number of points overlapping with the tick labels.
+        \end{solution}
+        \question Page 14, line 164: You're minimizing Eq 3, which is minimizing
+        the tradeoff between two solutions, but it's not clear what the
+        tradeoffs are that you're minimizing. Are you minimizing the tradeoff
+        between two of the metrics in the x-axis of Figure 6, if so, which ones?
+        \begin{solution}
+                The compromise solution is/are the solution(s) which minimize(s)
+                the tradeoff (ratio between improvement and deterioration). I
+                added a new equation and equation 3 is now equation 4, which
+                clarifies that this is done over the set of nondominated
+                solutions. I also added some text on page 9, lines 117-119.
+        \end{solution}
+        \question Page 16, Table 2: You discuss the different categories of the
+        E\&S conclusions, and for the Osier results you just focus on if an EG
+        is on the Pareto front or not. Can you identify if any of the
+        "potentially promising" scenarios in the E\&S are in the "near-optimal"
+        area of the Osier results? I feel like "potentially promising" and
+        "near-optimal" results for the same EG would suggest some agreement
+        between the two tools.
+        \begin{solution}
+                This is a valid question. All of the other EGs not listed in
+                Table 2 were found to be Pareto optimal. Only the non-optimal
+                solutions could be in the near-optimal space. Osier does not
+                distinguish ``degrees of promising'' because these
+                recommendations were partially based on qualitative expert
+                judgement.
+        \end{solution}
+        \question Page 16: lines 184-188: I appreciate the discussion of the
+        differences in binning and how they may lead to the differences in the
+        Osier and E\&S results.
+        \begin{solution}
+                Thank you!
+        \end{solution}
+        \question Page 13, Section 3.2: Some of the main (and well-known)
+        conclusions of the E\&S is the preferred performance of EGS 23, 29, 24,
+        and 30. Since you didn't include them in Table 2, I'm guessing Osier
+        identified them as on the Pareto front, and therefore optimal. But that
+        would be a useful result to explicitly call out.
+        \begin{solution}
+                Thank you, I added a sentence at the end of the section, page 16 lines 186-188.
+                indicating that Osier and the E&S demonstrate some agreement.
+        \end{solution}
+        \question Page 19, Citation 8: I recommend adding a URL for the E\&S. If
+        you pulled data/information from different appendices of this report, I
+        recommend pulling that out in a separate citation, since the report is
+        very long and providing a more specific reference to your data is always
+        helpful.
+        \begin{solution}
+                All of the ES citations now have a URL. Appendices C \& D have their own 
+                citations.
+        \end{solution}
+\end{questions}
+
+\section*{Reviewer 2}
 \begin{questions}
 
         %---------------------------------------------------------------------
@@ -174,6 +332,7 @@ paper.
 
         %---------------------------------------------------------------------
 \end{questions}
+
 \bibliographystyle{unsrt}
 \bibliography{revise}
 \end{document}
