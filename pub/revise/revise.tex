@@ -64,13 +64,13 @@
 % \biboptions{...} command. Following options are valid:
 
 %   round  -  round parentheses are used (default) square -  square brackets are
-%   used   [option] curly  -  curly braces are used      {option} angle  -
-%   angle brackets are used    <option> semicolon  -  multiple citations
-%   separated by semi-colon colon  - same as semicolon, an earlier confusion
-%   comma  -  separated by comma numbers-  selects numerical citations super  -
-%   numerical citations as superscripts sort   -  sorts multiple citations
-%   according to order in ref. list sort&compress   -  like sort, but also
-%   compresses numerical citations compress - compresses without sorting
+%   used   [option] curly  -  curly braces are used      {option} angle  - angle
+%   brackets are used    <option> semicolon  -  multiple citations separated by
+%   semi-colon colon  - same as semicolon, an earlier confusion comma  -
+%   separated by comma numbers-  selects numerical citations super  - numerical
+%   citations as superscripts sort   -  sorts multiple citations according to
+%   order in ref. list sort&compress   -  like sort, but also compresses
+%   numerical citations compress - compresses without sorting
 %
 % \biboptions{comma,round}
 
@@ -294,8 +294,9 @@ paper.
         identified them as on the Pareto front, and therefore optimal. But that
         would be a useful result to explicitly call out.
         \begin{solution}
-                Thank you, I added a sentence at the end of the section, page 16 lines 186-188.
-                indicating that Osier and the E&S demonstrate some agreement.
+                Thank you, I added a sentence at the end of the section, page 16
+                lines 186-188. indicating that Osier and the E\&S demonstrate
+                some agreement.
         \end{solution}
         \question Page 19, Citation 8: I recommend adding a URL for the E\&S. If
         you pulled data/information from different appendices of this report, I
@@ -303,34 +304,140 @@ paper.
         very long and providing a more specific reference to your data is always
         helpful.
         \begin{solution}
-                All of the ES citations now have a URL. Appendices C \& D have their own 
-                citations.
+                All of the ES citations now have a URL. Appendices C \& D have
+                their own citations.
         \end{solution}
 \end{questions}
 
 \section*{Reviewer 2}
 \begin{questions}
 
-        %---------------------------------------------------------------------
-        \question The color scheme in figures 4 and 7 make it difficult to
-        distinguish each individual components in the figures.
+\question Lines 147-150, you state, "Together, Figure 4 shows that MOO can
+        reduce structural uncertainty by modeling other objectives while
+        acknowledging that the inferior region of a Pareto front may hold
+        appealing solutions due to unmodeled objectives." I'm having trouble
+        following this conclusion. Coming from a position of ignorance, I
+        thought the goal was to characterize the Pareto front of solutions. My
+        interpretation here of what you're saying is that capturing the
+        near-optimal space near the Pareto front opens up the space for other
+        alternatives, giving some degree of flexibility with the solution space.
+        In theory this gives you the ability to provide near-optimal solutions
+        to account for preferences or objectives that are not directly captured
+        in the model. Is this an accurate reflection of your claim?
 
         \begin{solution}
-        	Thank you for your valuable input. We changed the color scheme
-        	to ensure that the colors representing each component are more
-        	distinct and easier to tell apart.
-
+                Yes, that is accurate.
         \end{solution}
 
-        %---------------------------------------------------------------------
-        \question Review comment 2
+\question I'm not sure I understand the value proposition of a more inclusive
+set of technology options being included aside from ``uncaptured preferences.''
         \begin{solution}
-        	Changes for review comment 2
-
+                I added a couple of sentences and references, page 4 lines
+                49-52, that elaborate on the benefits of an expanded search
+                space and structural uncertainty.
         \end{solution}
-
-
-        %---------------------------------------------------------------------
+\question I similarly am not sure how to interpret ``reducing structural
+uncertainty'' in this context. It might be useful to unpack what you mean by
+this term beforehand, especially since the concept of ``structural uncertainty''
+comes up more than once in the paper.
+        \begin{solution}
+                I added a couple of sentences and references, page 4 lines
+                49-52, that elaborate on the benefits of an expanded search
+                space and structural uncertainty.
+        \end{solution}
+\question Figure 5: I get what you're going for here, and it's an interesting
+approach. But as it is, the figure is so crowded and busy as to make it
+difficult to discern much if anything in terms of trends. That said, what you do
+in Figure 6 to pick out one fuel cycle in particular is highly effective. I
+think the issue with the parallel coordinate plot is that it doesn't afford much
+of a visual discernment in the magnitude of difference between the mean and
+extrema of a solution across a dimension. Basically: how big is the domain of
+the response variable? Are the differences large enough to matter?
+        \begin{solution}
+                If I understand your question properly, each objective is on a
+                different numerical scale (explained in a footnote). The
+                performance differences among the EGs are definitely ``large
+                enough to matter'' since we identified some disagreement between
+                a Pareto optimal approach and the conclusions of the E\&S. 
+        \end{solution}
+\question Lines 160-161: ``For those eight EGs, this means that there was
+another EG that performed better on at least one other objective.'' If my
+understanding of Pareto optimality is correct, this is the front in which no
+attribute can increase further without a corresponding decrease in another
+attribute. So by corollary, this sub-optimal space admits solutions which
+outperform on at least one metric while being no worse on others, correct? It
+may help to clarify this point in how these fuel cycles are ``sub-optimal.''
+        \begin{solution}
+                This conclusion does not follow. A ``sub-optimal'' solution
+                is not Pareto optimal, by definition. Further, no sub-optimal
+                solutions out perform any other solutions on any metric. Such
+                a solution would still be Pareto optimal (but an ``anchor point'').
+                Consider Figures 2 and 3 --- the least cost solution is also
+                among the worst for carbon emissions. But it is Pareto optimal
+                \textit{because} it outpeforms all other solutions on cost.
+        \end{solution}
+\question Line 162-163: You refer to a ``high-compromise'' scenario which
+``minimizes tradeoffs among objectives.'' This is just me, but it took reading
+this paragraph a couple of times to realize you mentioned Equation 3 in the
+follow-on sentence. I might suggest rephrasing this to make it more clear that
+we're minimizing Eq. 3, i.e., ``...minimizes the tradeoffs among objectives,
+i.e. minimizing Eq. 3.'' This is not a huge issue, but upon first reading I was
+asking myself how this was quantified until I realized you were referring back
+to Eq. 3.
+        \begin{solution}
+                Thank you for the suggestion. I added a clarification on page
+                14, line 170.
+        \end{solution}
+\question Line 169-170: ``its status as a 'high-compromise' solution should
+elevate its consideration.'' Why? (Here, again, it's not so much that it's
+``high-compromise'' as much as it minimizes the criteria trade-offs as
+established by the modelers. Maybe this is again just how I'm interpreting your
+meaning.)
+        \begin{solution}
+                Thank you, I have added a sentence clarifying this point on page
+                15, lines 171-172.
+        \end{solution}
+\question Lines 175-176: See my question before about optimality / superior
+performance on "at least one objective." I assume implied here is "while
+performing comparably on all others."
+        \begin{solution}
+                It is not necessary for a Pareto optimal solution to ``perform
+                comparably on all other'' objectives, especially for such a
+                large objective space as the one in the E\&S. For example, the
+                fuel cycle which totally minimizes activity at 100 years but is
+                worse than all other solutions on every other objective may
+                still be Pareto optimal (specifically a unique solution called
+                an ``anchor solution'').
+        \end{solution}
+\question Line 176-177: "It also suggests the presence of an unmodeled objective
+that was not considered in the Fuel Cycle Options study." Not a critique, but
+this is a serious understatement.
+        \begin{solution}
+                Thank you for the comment.
+        \end{solution}
+\question Question: were there other EGs which also met the Pareto optimal
+condition? If so, what were they, and how do these compare to the SET
+conclusion? If not, I would explicitly indicate this.
+        \begin{solution}
+                Yes, most of the EGs were Pareto optimal and these were shown in
+                Figure 5. We focused on the disagreement between the two tools
+                since Pareto optimality is a binary and the SET conclusion had
+                different ``degrees of promising.'' I added some context on page
+                16, lines 188-189 that explicitly call out the ``most
+                promising'' fuel cycles that were also Pareto optimal.
+        \end{solution}
+\question General comment: in the beginning and the end of the paper there are
+what I believe to be superfluous and frankly distracting references to
+"environmental justice" concepts which don't seem to be especially relevant to
+the context of the paper. Nothing as far as I can tell in the enumerated
+criteria pertains to disparate impacts or other factors which would imply a
+moral claim. These statements largely come across as decorative indications of
+the author(s)' political and social affiliations and less about the actual
+validity of the analysis method presented herein; leaving them out would leave
+the paper no worse off.
+        \begin{solution}
+                Thank you for the comment.
+        \end{solution}
 \end{questions}
 
 \bibliographystyle{unsrt}

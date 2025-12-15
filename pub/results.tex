@@ -114,9 +114,9 @@ better on at least one other objective.
 %     \caption{} \label{fig:once-through} \end{center} \end{figure}
 
 Leveraging a built-in tool from \texttt{Pymoo}, \gls{osier} identified a
-``high-compromise'' \gls{eg} that minimizes the tradeoffs among objectives.
-Figure \ref{fig:knee-solution} highlights \gls{eg}04, the \gls{eg} that
-minimizes Equation \ref{eqn:tradeoff}.
+``high-compromise'' \gls{eg} that minimizes the tradeoffs \textcolor{red}{(i.e.,
+Equation \ref{eqn:tradeoff})} among objectives. Figure \ref{fig:knee-solution}
+highlights \gls{eg}04, the \gls{eg} that minimizes Equation \ref{eqn:tradeoff}.
 
 \begin{figure}[ht!]
     \begin{center}
@@ -133,7 +133,9 @@ highlighted in \textcolor{black}{blue} corresponds to the ``high-compromise''
 solution shown in Figure \ref{fig:knee-solution}. Although the Fuel Cycle
 Options campaign discussed it as a ``less promising'' option, and it is Pareto
 optimal, we identified this as a point of disagreement because its status as a
-``high-compromise'' solution should elevate its consideration.
+``high-compromise'' solution should elevate its consideration
+\textcolor{red}{since this point represents the greatest balance among competing
+objectives}.
 
 \begin{table}[ht!]
     \centering
@@ -146,12 +148,14 @@ The rows highlighted in yellow correspond to \glspl{eg} ranked as ``potentially
 promsing'' by the \textcolor{red}{\gls{ens}}, the second highest tier, and which
 \gls{osier} found to be sub-optimal. All three of these \glspl{eg} correspond to
 a fuel cycle with an \gls{ads}. That they are not Pareto optimal means there are
-other \glspl{eg} that perform better on at least one objective. It also suggests
-the presence of an unmodeled objective that was not considered in the
+other \glspl{eg} that perform better on at least one objective. It also suggests the
+presence of an unmodeled objective that was not considered in the
 \textcolor{red}{\gls{ens}}. Finally, the \textcolor{red}{\gls{ens}} truncated 21
 \glspl{eg}, which we interpreted as ``not promising.'' However, we found 17 of
-these ``not promising'' fuel cycles to be Pareto optimal. \textcolor{red}{All of the ``most promising'' fuel cycles (\glspl{eg} 23,24,29,30)
-were found to be Pareto Optimal, demonstrating some agreement between \gls{osier} and the \gls{ens}.}
+these ``not promising'' fuel cycles to be Pareto optimal. \textcolor{red}{All of
+the ``most promising'' fuel cycles (\glspl{eg} 23,24,29,30) were found to be
+Pareto Optimal, demonstrating some agreement between \gls{osier} and the
+\gls{ens}.}
 
 % \textcolor{red}{Does this explanation belong in the discussion section?}
 % \textcolor{blue}{I think it's fine here.}
