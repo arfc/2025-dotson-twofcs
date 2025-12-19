@@ -14,12 +14,12 @@ around convex regions of a Pareto front because the points are either poorly
 spaced or entirely missed in a convex region \cite{emmerich_tutorial_2018}.
 Second, scalarization methods can only sample points along the Pareto front,
 rather than sampling points in the sub-optimal space.
-\textcolor{red}{Considering sub-optimal solutions is useful for addressing
+\textcolor{black}{Considering sub-optimal solutions is useful for addressing
 structural uncertainty, which relates to the existence of unmodeled or
 unmodelable objectives \cite{decarolis_using_2011,yue_review_2018}. Due to
 structural uncertainty, decision-makers may find appealing alternative solutions
 in a model's sub-optimal space.} Earlier energy modeling research dismissed
-\gls{moo} for \textcolor{red}{their inability to sample a model's inferior
+\gls{moo} for \textcolor{black}{their inability to sample a model's inferior
 region} \cite{decarolis_using_2011}. \glspl{ga} do not suffer from these
 limitations.
 
@@ -31,13 +31,13 @@ multi-, and many-objective problems over the similar \gls{nsga2} and \gls{nsga3}
 \cite{seada_unified_2016}. 
 
 This paper demonstrates \gls{osier} by comparing it to two existing modeling
-tools, \gls{temoa} \cite{decarolis_temoa_2010} and \textcolor{red}{the}
+tools, \gls{temoa} \cite{decarolis_temoa_2010} and \textcolor{black}{the}
 \gls{set} \cite{wigeland_nuclear_2014-2}. \gls{temoa} is a mature capacity
 expansion model and one of the first \glspl{esom} to implement a method to
 address structural uncertainty, \gls{mga}
 \cite{decarolis_using_2011,decarolis_modelling_2016}. The \gls{set} is an
 Excel-based application containing metric data from the
-\textcolor{red}{\gls{ens}} \cite{wigeland_nuclear_2014-2} and an objective
+\textcolor{black}{\gls{ens}} \cite{wigeland_nuclear_2014-2} and an objective
 weighting calculator to help decision makers identify fuel cycles of interest
 based on their priorities and preferences. The \gls{set} evaluates
 representative fuel cycle options, \glspl{eg}, based on a set of nine aggregated
@@ -54,7 +54,7 @@ these metrics and their sub-criteria.
 % \FloatBarrier
 
 \subsection{Experiment I: Validating Capacity Expansion Optimization}
-% \textcolor{red}{I don't love the names of these two subsections...}
+% \textcolor{black}{I don't love the names of these two subsections...}
 % \textcolor{blue}{How about ``Test I: Validating Dispatch Optimization'' and
 % ``Test II: Evaluating the Nuclear Fuel Cycle''}
 
@@ -76,21 +76,21 @@ is given by
     \intertext{where,}
     G &= \text{ the set of all generating technologies},\nonumber\\
     T &= \text{ the set of all time steps in the model},\nonumber\\
-    \textbf{CAP}_g &= \text{ the \textcolor{red}{electric} capacity of the \textit{g$^{th}$} 
+    \textbf{CAP}_g &= \text{ the \textcolor{black}{electric} capacity of the \textit{g$^{th}$} 
     technology}\quad \left[MW\right],\nonumber\\
     x_{g,t} &= \text{ the energy produced by generator, \textit{g}, 
     at time, \textit{t}}\quad \left[MWh\right]\nonumber,\\
     C^{cap}_{g} &= \text{the capital cost of the \textit{g$^{th}$} 
     technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
-    C^{fom}_{g} &= \text{the fixed \textcolor{red}{O\&M} costs of the \textit{g$^{th}$} 
+    C^{fom}_{g} &= \text{the fixed \textcolor{black}{O\&M} costs of the \textit{g$^{th}$} 
     technology} \quad \left[\frac{\$}{MW}\right]\nonumber,\\
-    C^{[fuel, vom]}_{g,t} &= \text{the variable \textcolor{red}{O\&M} costs of the 
+    C^{[fuel, vom]}_{g,t} &= \text{the variable \textcolor{black}{O\&M} costs of the 
     \textit{g$^{th}$} technology at time $t$} \quad \left[\frac{\$}{MWh}\right].\nonumber
 \end{align}
 
 We also compared the performance of these tools along a second objective,
 lifecycle \gls{co2} emissions. We generated 25 alternative solutions
-\textcolor{red}{with} \gls{temoa}'s \gls{mga} algorithm and then passed the
+\textcolor{black}{with} \gls{temoa}'s \gls{mga} algorithm and then passed the
 resulting decision variables to \gls{osier}'s dispatch model to calculate the
 corresponding \gls{co2} emissions. \gls{osier} simply optimized cost and
 emissions simultaneously. \gls{osier}'s emissions objective function is given by
@@ -126,9 +126,9 @@ is primarily a decision-support tool, we reexamine its results using Pareto
 optimality and demonstrate a method --- available in \gls{osier} via
 \texttt{Pymoo} and borrowed from \gls{mcda} --- to calculate high-tradeoff
 points. First, we extracted the raw data for each evaluation criteria from the
-\textcolor{red}{\gls{ens} \cite{wigeland_nuclear_2014,wigeland_nuclear_2014-1}}.
+\textcolor{black}{\gls{ens} \cite{wigeland_nuclear_2014,wigeland_nuclear_2014-1}}.
 We assumed that the nuclear fuel cycles represented in the \gls{set} are
-mutually exclusive. \textcolor{red}{That is, decision-makers will choose a
+mutually exclusive. \textcolor{black}{That is, decision-makers will choose a
 single fuel cycle option, rather than a mixture of fuel cycles.} Therefore, we
 skipped the genetic algorithm component of \gls{osier} since the resulant
 decision space reduces to the identity matrix. Then, we determined the Pareto
@@ -152,13 +152,13 @@ minimizes \cite{rachmawati_multiobjective_2009}
     M &= \text{the total number of objectives}. \nonumber
 \end{align}
 
-\textcolor{red}{Equation \ref{eqn:min-tradeoff} represents the least improvement per unit
+\textcolor{black}{Equation \ref{eqn:min-tradeoff} represents the least improvement per unit
 deterioration --- the smallest performance tradeoff as calculated in Equation
 \ref{eqn:tradeoff} --- among co-optimal solutions \cite{rachmawati_multiobjective_2009}.} 
 Since the design space for this
 problem is known \textit{a priori}, the results from this experiment are simply
 the non-dominated set of \glspl{eg} which we compare to the recommendations from
-the \textcolor{red}{\gls{ens}} \cite{wigeland_nuclear_2014-2}.
+the \textcolor{black}{\gls{ens}} \cite{wigeland_nuclear_2014-2}.
 
 % Include also brief introductions to both Temo and the SET tool, as well as an
 % explanation of how you set up the verification of Osier's suitability. 
